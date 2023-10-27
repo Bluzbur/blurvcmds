@@ -60,6 +60,6 @@ public class CommandSend implements SimpleCommand {
     }
 
     public boolean hasPermission(SimpleCommand.Invocation invocation) {
-        return invocation.source().hasPermission("vtools.send");
+        return invocation.source().hasPermission("blurcraftproxy.send");
     }
 }

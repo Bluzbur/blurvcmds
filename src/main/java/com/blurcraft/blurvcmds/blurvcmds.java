@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 
 import javax.inject.Inject;
 
-@Plugin(id = "blurvcmds", name="blurvcmds", version="1.0-SNAPSHOT", description="Some commands!")
+@Plugin(id = "blurvcmds", name="blurvcmds", version="1.0-SNAPSHOT", description="BlurCraft Velocity Commands!")
 public class blurvcmds {
     private final ProxyServer server;
 

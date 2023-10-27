@@ -31,10 +31,10 @@ public class CommandFind implements SimpleCommand {
             if (player.isPresent() && player.get().getCurrentServer().isPresent()) {
                 commandSource.sendMessage(Component.text("Player " + strings[0] + " is on " + player.get().getCurrentServer().get().getServerInfo().getName() + "!").color(COLOR_YELLOW));
             } else {
-                commandSource.sendMessage(Component.text("The player is not online!").color(COLOR_YELLOW));
+                commandSource.sendMessage(Component.text("The player is not online!"));
             }
         } else {
-            commandSource.sendMessage(Component.text("Usage: /find <username>").color(COLOR_RED));
+            commandSource.sendMessage(Component.text("<red>Usage: /find <username>"));
         }
     }
 
@@ -43,7 +43,7 @@ public class CommandFind implements SimpleCommand {
         String[] currentArgs = invocation.arguments();
 
         List<String> arg = new ArrayList<>();
-        if (currentArgs.length == 1 && invocation.source().hasPermission("vtools.find.autocomplete")) {
+        if (currentArgs.length == 1 && invocation.source().hasPermission("blurcraftproxy.find.autocomplete")) {
             for (Player player : server.getAllPlayers()) {
                 arg.add(player.getUsername());
             }

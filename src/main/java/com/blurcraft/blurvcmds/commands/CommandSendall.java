@@ -56,6 +56,6 @@ public class CommandSendall implements SimpleCommand {
 
     @Override
     public boolean hasPermission(SimpleCommand.Invocation invocation) {
-        return invocation.source().hasPermission("vtools.sendall");
+        return invocation.source().hasPermission("blurcraftproxy.sendall");
     }
 }

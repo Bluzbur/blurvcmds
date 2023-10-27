@@ -38,6 +38,6 @@ public class CommandRestart implements SimpleCommand {
 
     @Override
     public boolean hasPermission(SimpleCommand.Invocation invocation) {
-        return invocation.source().hasPermission("vtools.shutdown");
+        return invocation.source().hasPermission("blurcraftproxy.shutdown");
     }
 }

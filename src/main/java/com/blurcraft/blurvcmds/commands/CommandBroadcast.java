@@ -26,10 +26,10 @@ public class CommandBroadcast implements SimpleCommand {
         if (strings.length > 0) {
             String message = String.join(" ", strings).replace("&", "§");
             for (Player player : server.getAllPlayers()) {
-                player.sendMessage(Component.text(message));
+                player.sendMessage(Component.text("<red>[ALERT]" + message));
             }
         } else {
-            commandSource.sendMessage(Component.text("Usage: /broadcast <message>").color(COLOR_RED));
+            commandSource.sendMessage(Component.text("<red>Usage: /broadcast <message>"));
         }
     }
 
@@ -40,6 +40,6 @@ public class CommandBroadcast implements SimpleCommand {
 
     @Override
     public boolean hasPermission(SimpleCommand.Invocation invocation) {
-        return invocation.source().hasPermission("vtools.broadcast");
+        return invocation.source().hasPermission("blurcraftproxy.broadcast");
     }
 }

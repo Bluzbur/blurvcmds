@@ -39,6 +39,6 @@ public class CommandServers implements SimpleCommand {
 
     @Override
     public boolean hasPermission(SimpleCommand.Invocation invocation) {
-        return invocation.source().hasPermission("vtools.find");
+        return invocation.source().hasPermission("blurcraftproxy.find");
     }
 }
