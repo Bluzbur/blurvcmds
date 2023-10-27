@@ -6,6 +6,7 @@ import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.server.RegisteredServer;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +33,14 @@ public class CommandSend implements SimpleCommand {
                 Player player = oPlayer.get();
                 RegisteredServer server = oServer.get();
                 player.createConnectionRequest(server).connect();
-                commandSource.sendMessage(Component.text("You send " + player.getUsername() + " to " + server.getServerInfo().getName()).color(COLOR_YELLOW));
-                commandSource.sendMessage(Component.text("You got send to " + server.getServerInfo().getName()).color(COLOR_YELLOW));
+                commandSource.sendMessage(Component.text("You sent " + player.getUsername() + " to " + server.getServerInfo().getName(),NamedTextColor.YELLOW));
+                commandSource.sendMessage(Component.text("You got sent to " + server.getServerInfo().getName(),NamedTextColor.YELLOW));
+
             } else {
-                commandSource.sendMessage(Component.text("The server or user does not exists!").color(COLOR_RED));
+                commandSource.sendMessage(Component.text("The server or user does not exists!", NamedTextColor.DARK_RED));
             }
         } else {
-            commandSource.sendMessage(Component.text("Usage: /send <username> <server>").color(COLOR_RED));
+            commandSource.sendMessage(Component.text("Usage: /send <username> <server>", NamedTextColor.RED));
         }
     }
 

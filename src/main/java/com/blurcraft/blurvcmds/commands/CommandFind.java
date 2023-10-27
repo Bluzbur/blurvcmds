@@ -5,6 +5,7 @@ import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +32,10 @@ public class CommandFind implements SimpleCommand {
             if (player.isPresent() && player.get().getCurrentServer().isPresent()) {
                 commandSource.sendMessage(Component.text("Player " + strings[0] + " is on " + player.get().getCurrentServer().get().getServerInfo().getName() + "!").color(COLOR_YELLOW));
             } else {
-                commandSource.sendMessage(Component.text("The player is not online!"));
+                commandSource.sendMessage(Component.text(strings[0],NamedTextColor.YELLOW).append(Component.text(" is not online!", NamedTextColor.RED)));
             }
         } else {
-            commandSource.sendMessage(Component.text("<red>Usage: /find <username>"));
+            commandSource.sendMessage(Component.text("Usage: /find <username>", NamedTextColor.RED));
         }
     }
 

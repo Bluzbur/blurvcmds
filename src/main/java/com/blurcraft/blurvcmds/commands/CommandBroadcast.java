@@ -5,7 +5,10 @@ import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextColor;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +28,12 @@ public class CommandBroadcast implements SimpleCommand {
 
         if (strings.length > 0) {
             String message = String.join(" ", strings).replace("&", "§");
+            String alert = ("[ALERT] ");
             for (Player player : server.getAllPlayers()) {
-                player.sendMessage(Component.text("<red>[ALERT]" + message));
+                player.sendMessage(Component.text(alert, NamedTextColor.DARK_RED).append(Component.text(message, NamedTextColor.RED)));
             }
         } else {
-            commandSource.sendMessage(Component.text("<red>Usage: /broadcast <message>"));
+            commandSource.sendMessage(Component.text("Usage: /alert <message>", NamedTextColor.RED));
         }
     }
 

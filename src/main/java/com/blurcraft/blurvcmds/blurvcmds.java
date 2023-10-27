@@ -29,8 +29,6 @@ public class blurvcmds {
         server.getCommandManager().register("sendall", new CommandSendall(server));
         server.getCommandManager().register("broadcast", new CommandBroadcast(server), "bc", "alert");
         server.getCommandManager().register("find", new CommandFind(server), "search");
-        server.getCommandManager().register("restart", new CommandRestart(server));
-        server.getCommandManager().register("servers", new CommandServers(server), "allservers");
     }
 
 }

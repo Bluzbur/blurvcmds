@@ -6,6 +6,7 @@ import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.server.RegisteredServer;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +32,13 @@ public class CommandSendall implements SimpleCommand {
             if (oServer.isPresent()) {
                 for (Player player : server.getAllPlayers()) {
                     player.createConnectionRequest(oServer.get()).connect();
-                    player.sendMessage(Component.text("You are being sent to " + strings[0]).color(COLOR_YELLOW));
+                    player.sendMessage(Component.text("You are being sent to " + strings[0], NamedTextColor.YELLOW));
                 }
             } else {
-                commandSource.sendMessage(Component.text("The server does not exists!").color(COLOR_RED));
+                commandSource.sendMessage(Component.text("The server does not exists!",NamedTextColor.DARK_RED));
             }
         } else {
-            commandSource.sendMessage(Component.text("Usage: /sendall <server>").color(COLOR_RED));
+            commandSource.sendMessage(Component.text("Usage: /sendall <server>",NamedTextColor.RED));
         }
     }
 
