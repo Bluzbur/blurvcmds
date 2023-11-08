@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/blurvcmds.iml" filepath="$PROJECT_DIR$/.idea/modules/blurvcmds.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/blurvcmds.main.iml" filepath="$PROJECT_DIR$/.idea/modules/blurvcmds.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.blurcraft.blurvcmds.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.blurcraft.blurvcmds.main.iml" />
     </modules>
   </component>
 </project>
